@@ -1,5 +1,6 @@
 Observium
 =========
+This is a fork of Yelp/docker-observium.
 
 Dockerized version of Observium with support for external database, both
 communitiy and professional editions (via arbritrary svn source), packages
@@ -34,7 +35,7 @@ Linking volumes and using Observium CE:
         -v /opt/observium/volumes/html:/opt/observium/html \
         -v /opt/observium/volumes/logs:/opt/observium/logs \
         -v /opt/observium/volumes/rrd:/opt/observium/rrd \
-        yelp/observium
+        kgroeger/observium
 
 Using Observium PE (or another SVN source):
 
@@ -49,7 +50,7 @@ Using Observium PE (or another SVN source):
         -e SVN_USER=user@example.com \
         -e SVN_PASS=dfed555743854a475345ae01a7668acc \
         -e SVN_REPO=http://svn.observium.org/svn/observium/trunk \
-        yelp/observium
+        kgroeger/observium
 
 Volumes
 -------
