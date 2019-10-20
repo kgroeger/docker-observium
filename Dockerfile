@@ -27,8 +27,8 @@
 #                                 socket instead of using TCP.
 #
 #
-FROM phusion/baseimage:0.9.16
-MAINTAINER Codey Oxley <codey@yelp.com>
+FROM amd64/debian:stretch
+MAINTAINER Klaus Groeger <klaus [at] groeger . name>
 EXPOSE 8000/tcp
 VOLUME ["/config", \
         "/opt/observium/html", \
@@ -75,36 +75,29 @@ RUN locale-gen uk_UA.UTF-8
 # Install Observium prereqs
 RUN apt-get update -q && \
     apt-get install -y --no-install-recommends \
-      at \
-      fping \
-      git \
-      graphviz \
-      graphviz \
-      imagemagick \
-      ipmitool \
-      libapache2-mod-php5 \
-      libvirt-bin \
-      mariadb-client \
-      mtr-tiny \
-      nmap \
-      php5-cli \
-      php5-gd \
-      php5-json \
-      php5-ldap \
-      php5-mcrypt \
-      php5-mysql \
-      php5-snmp \
-      php-pear \
-      pwgen \
-      python-mysqldb \
-      rrdcached \
-      rrdtool \
-      snmp \
-      software-properties-common \
-      subversion \
-      unzip \
-      wget \
-      whois
+        apache2 \
+        fping \
+        graphviz \
+        ipmitool \
+        imagemagick \
+        libapache2-mod-php7.0 \
+        mariadb-server \
+        mariadb-client \
+        mtr-tiny \
+        php7.0-cli \
+        php7.0-mysql \
+        php7.0-mysqli \
+        php7.0-gd \
+        php7.0-mcrypt \
+        php7.0-json \
+        php-pear \
+        python-mysqldb \
+        rrdtool \
+        snmp \
+        subversion \
+        unzip \
+        wget \
+        whois   
 
 RUN mkdir -p \
         /config \
